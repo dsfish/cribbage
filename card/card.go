@@ -102,6 +102,9 @@ func (c Cards) String() string {
 type SliceOfCards []Cards
 
 func (s SliceOfCards) String() string {
+	if len(s) == 0 {
+		return "[]"
+	}
 	cardStrings := make([]string, len(s))
 	for i, cards := range s {
 		cardStrings[i] = cards.String()
